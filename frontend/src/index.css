@@ -1,0 +1,526 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MUSE Platform Global Styles */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* MUSE-specific styling */
+
+@layer components {
+  /* Archetypal color themes */
+  .theme-calliope {
+    --primary: 266 75% 60%;
+    --primary-foreground: 210 40% 98%;
+    --accent: 266 75% 95%;
+    --accent-foreground: 266 75% 20%;
+  }
+
+  .theme-clio {
+    --primary: 0 84% 60%;
+    --primary-foreground: 210 40% 98%;
+    --accent: 0 84% 95%;
+    --accent-foreground: 0 84% 20%;
+  }
+
+  .theme-erato {
+    --primary: 328 85% 60%;
+    --primary-foreground: 210 40% 98%;
+    --accent: 328 85% 95%;
+    --accent-foreground: 328 85% 20%;
+  }
+
+  .theme-euterpe {
+    --primary: 158 64% 52%;
+    --primary-foreground: 210 40% 98%;
+    --accent: 158 64% 95%;
+    --accent-foreground: 158 64% 20%;
+  }
+
+  .theme-melpomene {
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --accent: 217 91% 95%;
+    --accent-foreground: 217 91% 20%;
+  }
+
+  .theme-polyhymnia {
+    --primary: 258 90% 66%;
+    --primary-foreground: 210 40% 98%;
+    --accent: 258 90% 95%;
+    --accent-foreground: 258 90% 20%;
+  }
+
+  .theme-terpsichore {
+    --primary: 24 95% 53%;
+    --primary-foreground: 210 40% 98%;
+    --accent: 24 95% 95%;
+    --accent-foreground: 24 95% 20%;
+  }
+
+  .theme-thalia {
+    --primary: 48 96% 53%;
+    --primary-foreground: 210 40% 98%;
+    --accent: 48 96% 95%;
+    --accent-foreground: 48 96% 20%;
+  }
+
+  .theme-urania {
+    --primary: 199 89% 48%;
+    --primary-foreground: 210 40% 98%;
+    --accent: 199 89% 95%;
+    --accent-foreground: 199 89% 20%;
+  }
+
+  .theme-sophia {
+    --primary: 238 75% 65%;
+    --primary-foreground: 210 40% 98%;
+    --accent: 238 75% 95%;
+    --accent-foreground: 238 75% 20%;
+  }
+
+  .theme-techne {
+    --primary: 250 75% 65%;
+    --primary-foreground: 210 40% 98%;
+    --accent: 250 75% 95%;
+    --accent-foreground: 250 75% 20%;
+  }
+
+  .theme-psyche {
+    --primary: 300 76% 72%;
+    --primary-foreground: 210 40% 98%;
+    --accent: 300 76% 95%;
+    --accent-foreground: 300 76% 20%;
+  }
+
+  /* Sacred geometry patterns */
+  .sacred-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f59e0b' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0-11.046 8.954-20 20-20s20 8.954 20 20-8.954 20-20 20-20-8.954-20-20z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .fibonacci-spiral {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f59e0b' stroke-width='2' opacity='0.3'%3E%3Cpath d='M30 30 Q30 20 40 20 Q50 20 50 30 Q50 40 40 40 Q30 40 30 30 Q30 20 20 20 Q10 20 10 30 Q10 40 20 40 Q30 40 30 30'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .golden-ratio-grid {
+    background-image: linear-gradient(to right, rgba(245, 158, 11, 0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(245, 158, 11, 0.1) 1px, transparent 1px);
+    background-size: 61.8% 61.8%;
+  }
+
+  /* Component styles */
+  .muse-card {
+    @apply bg-card text-card-foreground rounded-lg border shadow-sm;
+  }
+
+  .muse-button {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .muse-button-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+
+  .muse-button-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+
+  .muse-button-outline {
+    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground;
+  }
+
+  .muse-input {
+    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .muse-textarea {
+    @apply flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .muse-label {
+    @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+  }
+
+  .muse-badge {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  .muse-badge-default {
+    @apply border-transparent bg-primary text-primary-foreground hover:bg-primary/80;
+  }
+
+  .muse-badge-secondary {
+    @apply border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+
+  .muse-badge-outline {
+    @apply text-foreground;
+  }
+
+  /* Frequency visualization styles */
+  .frequency-radar {
+    @apply w-full h-full;
+  }
+
+  .frequency-radar .recharts-polar-grid-angle line {
+    @apply stroke-border;
+  }
+
+  .frequency-radar .recharts-polar-grid-concentric circle {
+    @apply stroke-border;
+  }
+
+  .frequency-radar .recharts-polar-angle-axis text {
+    @apply fill-foreground text-xs;
+  }
+
+  .frequency-radar .recharts-polar-radius-axis text {
+    @apply fill-muted-foreground text-xs;
+  }
+
+  /* Sacred geometry visualization */
+  .sacred-geometry-container {
+    @apply relative overflow-hidden;
+  }
+
+  .sacred-geometry-container::before {
+    content: '';
+    @apply absolute inset-0 opacity-20;
+    background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
+  }
+
+  .golden-spiral-path {
+    @apply stroke-yellow-500/60 fill-none;
+    stroke-width: 2;
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.3));
+  }
+
+  .fibonacci-sequence {
+    @apply text-yellow-600 font-mono text-sm;
+  }
+
+  /* Animation utilities */
+  .animate-sacred-pulse {
+    animation: sacred-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-golden-spiral {
+    animation: golden-spiral 4s ease-in-out infinite;
+  }
+
+  .animate-frequency-flow {
+    animation: frequency-flow 6s ease-in-out infinite;
+  }
+
+  @keyframes sacred-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+  }
+
+  @keyframes golden-spiral {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    25% {
+      transform: rotate(90deg) scale(1.618);
+    }
+    50% {
+      transform: rotate(180deg) scale(1);
+    }
+    75% {
+      transform: rotate(270deg) scale(0.618);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  @keyframes frequency-flow {
+    0%, 100% {
+      transform: translateX(0) scale(1);
+      opacity: 0.6;
+    }
+    33% {
+      transform: translateX(20px) scale(1.1);
+      opacity: 1;
+    }
+    66% {
+      transform: translateX(-20px) scale(0.9);
+      opacity: 0.8;
+    }
+  }
+
+  /* Discovery interface styles */
+  .discovery-interface {
+    @apply bg-gradient-to-br from-background to-background/50;
+  }
+
+  .discovery-progress {
+    @apply bg-gradient-to-r from-primary/20 to-primary/40;
+  }
+
+  .discovery-iteration {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50;
+  }
+
+  .fitness-score {
+    @apply font-mono text-sm font-semibold;
+  }
+
+  .fitness-score.high {
+    @apply text-green-600;
+  }
+
+  .fitness-score.medium {
+    @apply text-yellow-600;
+  }
+
+  .fitness-score.low {
+    @apply text-red-600;
+  }
+
+  /* Community styles */
+  .creation-card {
+    @apply bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  .creation-card:hover {
+    @apply border-primary/50 shadow-lg;
+  }
+
+  .resonance-indicator {
+    @apply inline-flex items-center rounded-full px-2 py-1 text-xs font-medium;
+  }
+
+  .resonance-high {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .resonance-medium {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .resonance-low {
+    @apply bg-red-100 text-red-800;
+  }
+
+  /* Responsive design utilities */
+  .muse-container {
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .muse-container-sm {
+    @apply max-w-sm;
+  }
+
+  .muse-container-md {
+    @apply max-w-md;
+  }
+
+  .muse-container-lg {
+    @apply max-w-lg;
+  }
+
+  .muse-container-xl {
+    @apply max-w-xl;
+  }
+
+  .muse-container-2xl {
+    @apply max-w-2xl;
+  }
+
+  .muse-container-3xl {
+    @apply max-w-3xl;
+  }
+
+  .muse-container-4xl {
+    @apply max-w-4xl;
+  }
+
+  .muse-container-5xl {
+    @apply max-w-5xl;
+  }
+
+  .muse-container-6xl {
+    @apply max-w-6xl;
+  }
+
+  .muse-container-7xl {
+    @apply max-w-7xl;
+  }
+
+  .muse-container-full {
+    @apply max-w-full;
+  }
+
+  /* Accessibility improvements */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  }
+
+  .focus-visible {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .muse-button {
+      @apply border-2 border-current;
+    }
+    
+    .muse-card {
+      @apply border-2;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-sacred-pulse,
+    .animate-golden-spiral,
+    .animate-frequency-flow {
+      animation: none;
+    }
+  }
+
+  /* Print styles */
+  @media print {
+    .muse-button,
+    .muse-card {
+      @apply border border-gray-300;
+    }
+    
+    .bg-primary {
+      @apply bg-gray-800;
+    }
+    
+    .text-primary {
+      @apply text-gray-800;
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Selection styles */
+::selection {
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--primary-foreground));
+}
+
+/* Focus styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Loading skeleton styles */
+.skeleton {
+  background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--muted-foreground) / 0.1) 50%, hsl(var(--muted)) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
