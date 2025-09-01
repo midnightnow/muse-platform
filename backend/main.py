@@ -25,6 +25,7 @@ from database import db_manager, init_database
 from muse.api import main as main_api
 from muse.api import integration as integration_api
 from muse.api import community as community_api
+from muse.api import music as music_api
 from muse.validation.validation_dashboard import router as validation_router
 
 
@@ -239,6 +240,10 @@ def custom_openapi():
         {
             "name": "Community",
             "description": "Community features and social interactions"
+        },
+        {
+            "name": "Music",
+            "description": "Musical phrase generation and real-time audio synthesis"
         },
         {
             "name": "Validation",
@@ -485,6 +490,15 @@ app.include_router(
     community_api.router,
     prefix="/api/v1/community",
     tags=["Community"],
+    responses={
+        404: {"description": "Not found"},
+        500: {"description": "Internal server error"}
+    }
+)
+
+app.include_router(
+    music_api.router,
+    tags=["Music"],
     responses={
         404: {"description": "Not found"},
         500: {"description": "Internal server error"}
