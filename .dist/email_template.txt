@@ -1,0 +1,33 @@
+Subject: MUSE Platform - Mathematical Music Discovery Engine
+
+Hi Seiya,
+
+Following up on our discussion about music and code, I'm sharing MUSE - a platform that treats creativity as mathematical discovery rather than generation.
+
+Core concept: We use sacred geometry (golden ratio φ, Fibonacci sequences) to discover pre-existing musical forms in the Platonic realm, similar to how your "OS in 1000 Lines" reveals the essential nature of operating systems.
+
+Key files to review:
+1. sacred_geometry_calculator.py - Mathematical foundations (φ, Fibonacci, π)
+2. frequency_engine.py - 12 Muse archetypes mapped to frequencies (432-963 Hz)
+3. predictive_music_engine.py - Golden melodies, Fibonacci rhythms, scale generation
+4. MuseSoundEngine.tsx - Real-time Web Audio synthesis with ADSR envelopes
+
+The system maps personality traits to archetypal frequencies, then uses Pythagorean intervals and golden ratio progressions to generate actual music.
+
+I've included audio demos:
+- muse_golden_ratio_demo.wav - Hear the golden ratio in action
+- muse_fibonacci_rhythm_demo.mid - Fibonacci rhythm patterns for your DAW
+- muse_comparison_demo.wav - Golden ratio vs equal temperament comparison
+
+I'd particularly value your thoughts on:
+- The mathematical approach to creativity (discovery vs generation)
+- System architecture and API design (FastAPI + React/TypeScript)
+- Balance between determinism and variation in musical output
+- Whether synthesis should move to AudioWorklet for tighter timing
+
+The attached package includes everything needed to run locally. See EVALUATION.md for a complete guide with smoke tests and architectural review points.
+
+GitHub: https://github.com/midnightnow/muse-platform
+
+Best regards,
+[Your name]

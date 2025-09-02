@@ -1,0 +1,32 @@
+# Master Orchestrator Backend Dependencies
+
+# Core FastAPI framework and server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# WebSocket support
+websockets==12.0
+
+# Data validation and serialization
+pydantic==2.5.0
+
+# File upload support
+python-multipart==0.0.6
+
+# CORS middleware
+python-cors==1.0.1
+
+# Development and debugging
+python-dotenv==1.0.0
+
+# Optional: Database support (for future Firestore integration)
+# firebase-admin==6.2.0
+# google-cloud-firestore==2.13.1
+
+# Optional: Advanced AI model support (for MLX integration)
+# mlx==0.0.9
+# torch==2.1.1
+
+# Optional: Additional async support
+aiofiles==23.2.1
+httpx==0.25.2

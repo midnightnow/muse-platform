@@ -1,0 +1,25 @@
+MUSE Platform - Quick Start Guide
+==================================
+
+1. Extract the archive:
+   tar -xzf muse_eval_pack_*.tar.gz
+
+2. Backend setup:
+   cd backend
+   pip install -r requirements.txt
+   uvicorn main:app --reload
+
+3. Frontend setup:
+   cd frontend
+   npm install
+   npm run dev
+
+4. Test the API:
+   curl http://localhost:8000/api/muse/music/golden-melody?base_freq=440&length=8
+
+5. Open browser:
+   http://localhost:3000 (Frontend)
+   http://localhost:8000/docs (API Documentation)
+
+For detailed evaluation guide, see EVALUATION.md
+For philosophy and architecture, see MUSE_SHOWCASE_FOR_SEIYA.md

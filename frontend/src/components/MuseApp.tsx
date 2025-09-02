@@ -22,6 +22,7 @@ import MuseCommunityPage from '@/pages/MuseCommunityPage'
 import MuseProfilePage from '@/pages/MuseProfilePage'
 import MuseDashboardPage from '@/pages/MuseDashboardPage'
 import WelcomePage from '@/pages/WelcomePage'
+import MagicLandingPage from '@/pages/MagicLandingPage'
 import NotFoundPage from '@/pages/NotFoundPage'
 
 const MuseApp: React.FC = () => {
@@ -109,6 +110,11 @@ const MuseApp: React.FC = () => {
             <AnimatePresence mode="wait">
               <Routes>
                 {/* Public Routes */}
+                <Route
+                  path="/"
+                  element={<MagicLandingPage />}
+                />
+                
                 <Route
                   path="/welcome"
                   element={
@@ -203,21 +209,6 @@ const MuseApp: React.FC = () => {
                   }
                 />
                 
-                {/* Default Routes */}
-                <Route
-                  path="/"
-                  element={
-                    isAuthenticated ? (
-                      currentSignature ? (
-                        <Navigate to="/dashboard" replace />
-                      ) : (
-                        <Navigate to="/assessment" replace />
-                      )
-                    ) : (
-                      <Navigate to="/welcome" replace />
-                    )
-                  }
-                />
                 
                 {/* 404 Route */}
                 <Route path="*" element={<NotFoundPage />} />
