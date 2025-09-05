@@ -1,0 +1,4252 @@
+{
+  "gauntlet_metadata": {
+    "execution_id": "red_zen_muse_1756814005",
+    "start_time": "2025-09-02T21:53:21.993681",
+    "end_time": "2025-09-02T21:53:25.554896",
+    "duration_seconds": 3.561094,
+    "target_url": "http://localhost:8000",
+    "project_root": "."
+  },
+  "executive_summary": {
+    "total_findings": 242,
+    "critical_vulnerabilities": 130,
+    "high_severity_issues": 29,
+    "medium_severity_issues": 77,
+    "low_severity_issues": 6,
+    "security_score": 33.7,
+    "overall_assessment": "NOT_READY",
+    "system_health": "POOR"
+  },
+  "test_phases": {
+    "phase_1_red_team": {
+      "status": "completed",
+      "findings": 136
+    },
+    "phase_2_zen_harmony": {
+      "status": "completed",
+      "findings": 0
+    },
+    "phase_3_gemini_intelligence": {
+      "status": "completed",
+      "findings": 1
+    },
+    "phase_4_waterfall_cascade": {
+      "status": "completed",
+      "findings": 1
+    }
+  },
+  "detailed_findings": [
+    {
+      "id": "MUSE_0001",
+      "category": "Injection Attack",
+      "severity": "HIGH",
+      "file_path": "backend/main.py",
+      "line_number": 0,
+      "description": "Potential injection vulnerability at /api/generate",
+      "code_snippet": "'; DROP TABLE users; --",
+      "exploit_chain": [
+        "POST /api/generate",
+        "Malicious payload",
+        "Potential data exposure"
+      ],
+      "remediation_steps": [
+        "Implement input validation",
+        "Use parameterized queries",
+        "Sanitize all inputs"
+      ],
+      "gemini_confidence": 0.9646111022301824,
+      "quantum_risk_score": 0.4148708892936803
+    },
+    {
+      "id": "MUSE_0002",
+      "category": "Injection Attack",
+      "severity": "HIGH",
+      "file_path": "backend/main.py",
+      "line_number": 0,
+      "description": "Potential injection vulnerability at /api/generate",
+      "code_snippet": "' OR '1'='1",
+      "exploit_chain": [
+        "POST /api/generate",
+        "Malicious payload",
+        "Potential data exposure"
+      ],
+      "remediation_steps": [
+        "Implement input validation",
+        "Use parameterized queries",
+        "Sanitize all inputs"
+      ],
+      "gemini_confidence": 0.9259446880848257,
+      "quantum_risk_score": 0.6907899966904443
+    },
+    {
+      "id": "MUSE_0003",
+      "category": "Injection Attack",
+      "severity": "HIGH",
+      "file_path": "backend/main.py",
+      "line_number": 0,
+      "description": "Potential injection vulnerability at /api/generate",
+      "code_snippet": "UNION SELECT * FROM secrets",
+      "exploit_chain": [
+        "POST /api/generate",
+        "Malicious payload",
+        "Potential data exposure"
+      ],
+      "remediation_steps": [
+        "Implement input validation",
+        "Use parameterized queries",
+        "Sanitize all inputs"
+      ],
+      "gemini_confidence": 0.9540742745398513,
+      "quantum_risk_score": 0.197567357681382
+    },
+    {
+      "id": "MUSE_0004",
+      "category": "Injection Attack",
+      "severity": "HIGH",
+      "file_path": "backend/main.py",
+      "line_number": 0,
+      "description": "Potential injection vulnerability at /api/generate",
+      "code_snippet": "'; INSERT INTO admin VALUES('hacker'); --",
+      "exploit_chain": [
+        "POST /api/generate",
+        "Malicious payload",
+        "Potential data exposure"
+      ],
+      "remediation_steps": [
+        "Implement input validation",
+        "Use parameterized queries",
+        "Sanitize all inputs"
+      ],
+      "gemini_confidence": 0.9481567135308657,
+      "quantum_risk_score": 0.1901898315560675
+    },
+    {
+      "id": "MUSE_0005",
+      "category": "Injection Attack",
+      "severity": "HIGH",
+      "file_path": "backend/main.py",
+      "line_number": 0,
+      "description": "Potential injection vulnerability at /api/generate",
+      "code_snippet": "{\"$ne\": null}",
+      "exploit_chain": [
+        "POST /api/generate",
+        "Malicious payload",
+        "Potential data exposure"
+      ],
+      "remediation_steps": [
+        "Implement input validation",
+        "Use parameterized queries",
+        "Sanitize all inputs"
+      ],
+      "gemini_confidence": 0.9002236676904376,
+      "quantum_risk_score": 0.09635319216698712
+    },
+    {
+      "id": "MUSE_0006",
+      "category": "Injection Attack",
+      "severity": "HIGH",
+      "file_path": "backend/main.py",
+      "line_number": 0,
+      "description": "Potential injection vulnerability at /api/generate",
+      "code_snippet": "{\"$gt\": \"\"}",
+      "exploit_chain": [
+        "POST /api/generate",
+        "Malicious payload",
+        "Potential data exposure"
+      ],
+      "remediation_steps": [
+        "Implement input validation",
+        "Use parameterized queries",
+        "Sanitize all inputs"
+      ],
+      "gemini_confidence": 0.9384847035467658,
+      "quantum_risk_score": 0.799175841112805
+    },
+    {
+      "id": "MUSE_0007",
+      "category": "Injection Attack",
+      "severity": "HIGH",
+      "file_path": "backend/main.py",
+      "line_number": 0,
+      "description": "Potential injection vulnerability at /api/generate",
+      "code_snippet": "{\"$regex\": \".*\"}",
+      "exploit_chain": [
+        "POST /api/generate",
+        "Malicious payload",
+        "Potential data exposure"
+      ],
+      "remediation_steps": [
+        "Implement input validation",
+        "Use parameterized queries",
+        "Sanitize all inputs"
+      ],
+      "gemini_confidence": 0.8912673324758037,
+      "quantum_risk_score": 0.9382926761023974
+    },
+    {
+      "id": "MUSE_0008",
+      "category": "Injection Attack",
+      "severity": "HIGH",
+      "file_path": "backend/main.py",
+      "line_number": 0,
+      "description": "Potential injection vulnerability at /api/generate",
+      "code_snippet": "{\"$where\": \"this.username == this.password\"}",
+      "exploit_chain": [
+        "POST /api/generate",
+        "Malicious payload",
+        "Potential data exposure"
+      ],
+      "remediation_steps": [
+        "Implement input validation",
+        "Use parameterized queries",
+        "Sanitize all inputs"
+      ],
+      "gemini_confidence": 0.9285312223419584,
+      "quantum_risk_score": 0.11470603588326034
+    },
+    {
+      "id": "MUSE_0009",
+      "category": "Load Balancing",
+      "severity": "MEDIUM",
+      "file_path": "backend/main.py",
+      "line_number": 0,
+      "description": "System struggles under mixed load patterns",
+      "code_snippet": "",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Implement request prioritization",
+        "Add load balancing",
+        "Optimize heavy request handling"
+      ],
+      "gemini_confidence": 0.9334510805405828,
+      "quantum_risk_score": 0.6530667530914782
+    },
+    {
+      "id": "MUSE_0010",
+      "category": "Cascading Failure",
+      "severity": "HIGH",
+      "file_path": "system",
+      "line_number": 0,
+      "description": "Waterfall cascade failed at step: System Warming",
+      "code_snippet": "",
+      "exploit_chain": [
+        "Sequential dependency failure",
+        "System cascade failure",
+        "Service unavailability"
+      ],
+      "remediation_steps": [
+        "Implement circuit breakers",
+        "Add fallback mechanisms",
+        "Improve error recovery"
+      ],
+      "gemini_confidence": 0.9929575293069323,
+      "quantum_risk_score": 0.46237077285711703
+    },
+    {
+      "id": "MUSE_0011",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "red_zen_muse_gauntlet.py",
+      "line_number": 507,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "(r'eval\\s*\\(', \"Code Injection\", ThreatLevel.CRITICAL, \"Use of eval() can lead to code injection\"),",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.920524285546872,
+      "quantum_risk_score": 0.7554459354962877
+    },
+    {
+      "id": "MUSE_0012",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "red_zen_muse_gauntlet.py",
+      "line_number": 508,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "(r'exec\\s*\\(', \"Code Injection\", ThreatLevel.CRITICAL, \"Use of exec() can lead to code injection\"),",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9732825571997602,
+      "quantum_risk_score": 0.8928076586681462
+    },
+    {
+      "id": "MUSE_0013",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "red_zen_muse_gauntlet.py",
+      "line_number": 510,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "(r'pickle\\.loads?\\s*\\(', \"Deserialization\", ThreatLevel.HIGH, \"pickle.load() can execute arbitrary code\"),",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9979300914733735,
+      "quantum_risk_score": 0.09118283496459223
+    },
+    {
+      "id": "MUSE_0014",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "red_zen_muse_gauntlet.py",
+      "line_number": 511,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "(r'input\\s*\\(', \"Input Validation\", ThreatLevel.MEDIUM, \"input() should be validated to prevent injection\"),",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8905634998061803,
+      "quantum_risk_score": 0.8987504735020847
+    },
+    {
+      "id": "MUSE_0015",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "red_zen_muse_gauntlet.py",
+      "line_number": 538,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "(r'eval\\s*\\(', \"Code Injection\", ThreatLevel.CRITICAL, \"Use of eval() can lead to code injection\"),",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9462617180047055,
+      "quantum_risk_score": 0.29886845273511364
+    },
+    {
+      "id": "MUSE_0016",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/database.py",
+      "line_number": 399,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "confirm = input(\"\u26a0\ufe0f  This will delete all data. Are you sure? (y/N): \")",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.942182243610387,
+      "quantum_risk_score": 0.23535717490830255
+    },
+    {
+      "id": "MUSE_0017",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/test_security_minimal.py",
+      "line_number": 45,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def validate_safe_input(value: str) -> str:",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9813772944844158,
+      "quantum_risk_score": 0.43956629480645104
+    },
+    {
+      "id": "MUSE_0018",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/test_security_minimal.py",
+      "line_number": 357,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "assert SecurityValidator.validate_safe_input(safe_input) == safe_input",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.869047378306934,
+      "quantum_risk_score": 0.532368783911034
+    },
+    {
+      "id": "MUSE_0019",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/test_security_minimal.py",
+      "line_number": 369,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "SecurityValidator.validate_safe_input(dangerous_input)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9525829750250414,
+      "quantum_risk_score": 0.8887260845508217
+    },
+    {
+      "id": "MUSE_0020",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/muse/core/input_validation.py",
+      "line_number": 332,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def validate_safe_input(value: str) -> str:",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8771957597807418,
+      "quantum_risk_score": 0.8138986050042724
+    },
+    {
+      "id": "MUSE_0021",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/muse/core/authentication.py",
+      "line_number": 220,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def sanitize_input(input_string: str, max_length: int = 1000) -> str:",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9454822277223298,
+      "quantum_risk_score": 0.7238380643060808
+    },
+    {
+      "id": "MUSE_0022",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/tests/test_security.py",
+      "line_number": 355,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "assert SecurityValidator.validate_safe_input(safe_input) == safe_input",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9775571135348661,
+      "quantum_risk_score": 0.6794668497316848
+    },
+    {
+      "id": "MUSE_0023",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/tests/test_security.py",
+      "line_number": 367,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "SecurityValidator.validate_safe_input(dangerous_input)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8897363571504328,
+      "quantum_risk_score": 0.35992467856658195
+    },
+    {
+      "id": "MUSE_0024",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/tests/test_security.py",
+      "line_number": 590,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "safe_content = SecurityValidator.validate_safe_input(creation.content)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9568982403005695,
+      "quantum_risk_score": 0.15166699780756798
+    },
+    {
+      "id": "MUSE_0025",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/six.py",
+      "line_number": 740,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(\"\"\"exec _code_ in _globs_, _locs_\"\"\")",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.893139315259136,
+      "quantum_risk_score": 0.09532418712369328
+    },
+    {
+      "id": "MUSE_0026",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/typing_extensions.py",
+      "line_number": 1444,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "(unless you are familiar with how eval() and exec() work).  The",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9465016620563339,
+      "quantum_risk_score": 0.7436855874053498
+    },
+    {
+      "id": "MUSE_0027",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/typing_extensions.py",
+      "line_number": 1444,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "(unless you are familiar with how eval() and exec() work).  The",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.991096831306785,
+      "quantum_risk_score": 0.6061531458533669
+    },
+    {
+      "id": "MUSE_0028",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/typing_extensions.py",
+      "line_number": 2269,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "query(f\"SELECT * FROM {input()}\")  # not ok",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9406249345260828,
+      "quantum_risk_score": 0.5880555322866717
+    },
+    {
+      "id": "MUSE_0029",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/typing_extensions.py",
+      "line_number": 3967,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "# as a way of emulating annotation scopes when calling `eval()`",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9406419713711083,
+      "quantum_risk_score": 0.6655945568122904
+    },
+    {
+      "id": "MUSE_0030",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/typing_extensions.py",
+      "line_number": 3972,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "value if not isinstance(value, str) else eval(value, globals, locals)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9286624014868453,
+      "quantum_risk_score": 0.9112937141877818
+    },
+    {
+      "id": "MUSE_0031",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/typing_extensions.py",
+      "line_number": 4019,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "# If we pass None to eval() below, the globals of this module are used.",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9989698992235412,
+      "quantum_risk_score": 0.9829369765127222
+    },
+    {
+      "id": "MUSE_0032",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/typing_extensions.py",
+      "line_number": 4031,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "# as a way of emulating annotation scopes when calling `eval()`",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9471167869337528,
+      "quantum_risk_score": 0.9463997947339426
+    },
+    {
+      "id": "MUSE_0033",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/typing_extensions.py",
+      "line_number": 4036,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "# but `eval()` does not have a dedicated parameter for that scope.",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8929574086632509,
+      "quantum_risk_score": 0.9459037439811185
+    },
+    {
+      "id": "MUSE_0034",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/typing_extensions.py",
+      "line_number": 4064,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "value = eval(code, globals, locals)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9513547562934221,
+      "quantum_risk_score": 0.48691947544755354
+    },
+    {
+      "id": "MUSE_0035",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/packaging/_parser.py",
+      "line_number": 332,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "value = ast.literal_eval(python_str)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8873081964862611,
+      "quantum_risk_score": 0.07185729404857899
+    },
+    {
+      "id": "MUSE_0036",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/packaging/licenses/__init__.py",
+      "line_number": 100,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "invalid = eval(python_expression, globals(), locals())",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9550164442946918,
+      "quantum_risk_score": 0.9186464309689983
+    },
+    {
+      "id": "MUSE_0037",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/ecdsa/test_jacobi.py",
+      "line_number": 778,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "self.assertEqual(pickle.loads(pickle.dumps(pj)), pj)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.8767374463819988,
+      "quantum_risk_score": 0.6090053505048754
+    },
+    {
+      "id": "MUSE_0038",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/ecdsa/test_eddsa.py",
+      "line_number": 27,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def test_invalid_input(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8562272720046,
+      "quantum_risk_score": 0.4914562865276717
+    },
+    {
+      "id": "MUSE_0039",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/ecdsa/test_eddsa.py",
+      "line_number": 374,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "assert pickle.loads(pickle.dumps(g)) == g",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.985776537836617,
+      "quantum_risk_score": 0.2945636864061085
+    },
+    {
+      "id": "MUSE_0040",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/ecdsa/test_pyecdsa.py",
+      "line_number": 552,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def test_verify_with_too_long_input(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8782858836455278,
+      "quantum_risk_score": 0.9871520464614857
+    },
+    {
+      "id": "MUSE_0041",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/lexer.py",
+      "line_number": 86,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "Strip leading and trailing newlines from the input (default: True).",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8894985211623148,
+      "quantum_risk_score": 0.7038556948872836
+    },
+    {
+      "id": "MUSE_0042",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/lexer.py",
+      "line_number": 97,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "If given and greater than 0, expand tabs in the input (default: 0).",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9052184257336408,
+      "quantum_risk_score": 0.1916681824048928
+    },
+    {
+      "id": "MUSE_0043",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/lexer.py",
+      "line_number": 206,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def _preprocess_lexer_input(self, text):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9737046994701543,
+      "quantum_risk_score": 0.2290056169569218
+    },
+    {
+      "id": "MUSE_0044",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/lexer.py",
+      "line_number": 267,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "text = self._preprocess_lexer_input(text)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8635743321685869,
+      "quantum_risk_score": 0.8365707135189906
+    },
+    {
+      "id": "MUSE_0045",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/lexers/hdl.py",
+      "line_number": 339,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "# Command line input (21.6)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9139466580979034,
+      "quantum_risk_score": 0.7277160351253328
+    },
+    {
+      "id": "MUSE_0046",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/lexers/configs.py",
+      "line_number": 257,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "# input (tabs expanded to spaces) and the expansion tab width is != 8,",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8711308980621966,
+      "quantum_risk_score": 0.48219800248394407
+    },
+    {
+      "id": "MUSE_0047",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/lexers/_julia_builtins.py",
+      "line_number": 150,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "v = eval(Symbol(compl.mod))",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9153882149888081,
+      "quantum_risk_score": 0.19938575957437354
+    },
+    {
+      "id": "MUSE_0048",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/lexers/_julia_builtins.py",
+      "line_number": 361,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "v = eval(Symbol(compl.mod))",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9775379368156669,
+      "quantum_risk_score": 0.4341324271059649
+    },
+    {
+      "id": "MUSE_0049",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/lexers/__init__.py",
+      "line_number": 154,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(f.read(), custom_namespace)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9560194392610538,
+      "quantum_risk_score": 0.3160375176019443
+    },
+    {
+      "id": "MUSE_0050",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/lexers/installers.py",
+      "line_number": 66,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "r'EnableWindow|EnumReg(?:Key|Value)|Exch|Exec(?:Shell|Wait)?|'",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9465159935900546,
+      "quantum_risk_score": 0.22841117253182808
+    },
+    {
+      "id": "MUSE_0051",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/lexers/foxpro.py",
+      "line_number": 70,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "r'DTOC|DTOR|DTOS|DTOT|EDITSOURCE|EMPTY|EOF|ERROR|EVAL(UATE)?|'",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8760827414075022,
+      "quantum_risk_score": 0.5261601085604298
+    },
+    {
+      "id": "MUSE_0052",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/lexers/special.py",
+      "line_number": 115,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "val = ast.literal_eval(val)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8684625505058639,
+      "quantum_risk_score": 0.9329236410277477
+    },
+    {
+      "id": "MUSE_0053",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/formatters/html.py",
+      "line_number": 282,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "relative to the input (i.e. the first line is line 1) and are",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8713964785317319,
+      "quantum_risk_score": 0.010856780104391839
+    },
+    {
+      "id": "MUSE_0054",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/formatters/__init__.py",
+      "line_number": 91,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "this method is equivalent to running ``eval()`` on the input file. The formatter is",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8515529205050438,
+      "quantum_risk_score": 0.4433626890944026
+    },
+    {
+      "id": "MUSE_0055",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pygments/formatters/__init__.py",
+      "line_number": 103,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(f.read(), custom_namespace)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8850264689231114,
+      "quantum_risk_score": 0.27981868633786866
+    },
+    {
+      "id": "MUSE_0056",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/c_lexer.py",
+      "line_number": 17,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "input text with input(), and call token() to get new",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9231779669605941,
+      "quantum_risk_score": 0.2560192747172223
+    },
+    {
+      "id": "MUSE_0057",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/c_lexer.py",
+      "line_number": 72,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def input(self, text):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8917009507987177,
+      "quantum_risk_score": 0.584794938039023
+    },
+    {
+      "id": "MUSE_0058",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/c_lexer.py",
+      "line_number": 73,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "self.lexer.input(text)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8591998553524165,
+      "quantum_risk_score": 0.16503358837536886
+    },
+    {
+      "id": "MUSE_0059",
+      "category": "Debug Mode",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 79,
+      "description": "Debug mode should not be enabled in production",
+      "code_snippet": "yaccdebug   = True             # Debugging mode.  If set, yacc generates a",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Set DEBUG=False in production",
+        "Use environment variables for configuration",
+        "Remove debug endpoints"
+      ],
+      "gemini_confidence": 0.9975477240031022,
+      "quantum_risk_score": 0.5513659505622724
+    },
+    {
+      "id": "MUSE_0060",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 374,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "lexer.input(input)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9538906775157419,
+      "quantum_risk_score": 0.4880978160213236
+    },
+    {
+      "id": "MUSE_0061",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 718,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "lexer.input(input)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9557549606885246,
+      "quantum_risk_score": 0.8711865663631253
+    },
+    {
+      "id": "MUSE_0062",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 1024,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "lexer.input(input)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.891715227997065,
+      "quantum_risk_score": 0.2720890341263491
+    },
+    {
+      "id": "MUSE_0063",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 1562,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "c = eval(s)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9880564042134895,
+      "quantum_risk_score": 0.40238220135690306
+    },
+    {
+      "id": "MUSE_0064",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 1982,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec('import %s' % module)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9612593642127567,
+      "quantum_risk_score": 0.7899209823049939
+    },
+    {
+      "id": "MUSE_0065",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 2009,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "tabversion = pickle.load(in_f)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.8784552357800675,
+      "quantum_risk_score": 0.4165220100016884
+    },
+    {
+      "id": "MUSE_0066",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 2012,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "self.lr_method = pickle.load(in_f)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9387357975718823,
+      "quantum_risk_score": 0.057646337592997754
+    },
+    {
+      "id": "MUSE_0067",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 2013,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "signature      = pickle.load(in_f)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9152965658910083,
+      "quantum_risk_score": 0.5967507857575796
+    },
+    {
+      "id": "MUSE_0068",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 2014,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "self.lr_action = pickle.load(in_f)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.8957067246472337,
+      "quantum_risk_score": 0.0828517726830581
+    },
+    {
+      "id": "MUSE_0069",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 2015,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "self.lr_goto   = pickle.load(in_f)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.8500454636807876,
+      "quantum_risk_score": 0.633160560622511
+    },
+    {
+      "id": "MUSE_0070",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 2016,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "productions    = pickle.load(in_f)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9873617139351754,
+      "quantum_risk_score": 0.5122561709288053
+    },
+    {
+      "id": "MUSE_0071",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/yacc.py",
+      "line_number": 3254,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec('import %s' % pkgname)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9049133508940009,
+      "quantum_risk_score": 0.8209767318175369
+    },
+    {
+      "id": "MUSE_0072",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/lex.py",
+      "line_number": 107,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "#    input()          -  Store a new string in the lexer",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8554286622695247,
+      "quantum_risk_score": 0.8681117821247997
+    },
+    {
+      "id": "MUSE_0073",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/lex.py",
+      "line_number": 215,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec('import %s' % tabfile)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9186913500522037,
+      "quantum_risk_score": 0.4376637107481316
+    },
+    {
+      "id": "MUSE_0074",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/lex.py",
+      "line_number": 249,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "# input() - Push a new string into the lexer",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9262741634796572,
+      "quantum_risk_score": 0.32793342191389774
+    },
+    {
+      "id": "MUSE_0075",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/lex.py",
+      "line_number": 251,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def input(self, s):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.903036565043703,
+      "quantum_risk_score": 0.08174982280681053
+    },
+    {
+      "id": "MUSE_0076",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/lex.py",
+      "line_number": 411,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "raise RuntimeError('No input string given with input()')",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9057045612934027,
+      "quantum_risk_score": 0.5538902311311873
+    },
+    {
+      "id": "MUSE_0077",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/lex.py",
+      "line_number": 1019,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "# Create global versions of the token() and input() functions",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9198639627791568,
+      "quantum_risk_score": 0.21704332359483025
+    },
+    {
+      "id": "MUSE_0078",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/lex.py",
+      "line_number": 1039,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec('import %s' % pkgname)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9032314452814777,
+      "quantum_risk_score": 0.7522798401763587
+    },
+    {
+      "id": "MUSE_0079",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/lex.py",
+      "line_number": 1063,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "sys.stdout.write('Reading from standard input (type EOF to end):\\n')",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9945193576667245,
+      "quantum_risk_score": 0.7537163895341292
+    },
+    {
+      "id": "MUSE_0080",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/lex.py",
+      "line_number": 1070,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "_input(data)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8958878112134337,
+      "quantum_risk_score": 0.4367661269117553
+    },
+    {
+      "id": "MUSE_0081",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/cpp.py",
+      "line_number": 182,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "self.lexer.input(text)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9396336209796566,
+      "quantum_risk_score": 0.5513461056233451
+    },
+    {
+      "id": "MUSE_0082",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/cpp.py",
+      "line_number": 210,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "self.lexer.input(\"identifier\")",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.86129991349895,
+      "quantum_risk_score": 0.3186655265110121
+    },
+    {
+      "id": "MUSE_0083",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/cpp.py",
+      "line_number": 218,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "self.lexer.input(\"12345\")",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9278255374143631,
+      "quantum_risk_score": 0.06844049212014525
+    },
+    {
+      "id": "MUSE_0084",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/cpp.py",
+      "line_number": 227,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "self.lexer.input(\"\\\"filename\\\"\")",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8762143283908667,
+      "quantum_risk_score": 0.7174358501653938
+    },
+    {
+      "id": "MUSE_0085",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/cpp.py",
+      "line_number": 235,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "self.lexer.input(\"  \")",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8522854379405319,
+      "quantum_risk_score": 0.2866064136287686
+    },
+    {
+      "id": "MUSE_0086",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/cpp.py",
+      "line_number": 243,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "self.lexer.input(\"\\n\")",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9097558762912237,
+      "quantum_risk_score": 0.2545914337567412
+    },
+    {
+      "id": "MUSE_0087",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/cpp.py",
+      "line_number": 256,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "self.lexer.input(c)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9534446041781864,
+      "quantum_risk_score": 0.1644064901483946
+    },
+    {
+      "id": "MUSE_0088",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/cpp.py",
+      "line_number": 290,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "lex.input(input)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9656288981880625,
+      "quantum_risk_score": 0.5573128827999438
+    },
+    {
+      "id": "MUSE_0089",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pycparser/ply/cpp.py",
+      "line_number": 600,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "result = eval(expr)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9835307201374589,
+      "quantum_risk_score": 0.9652284303163187
+    },
+    {
+      "id": "MUSE_0090",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/cryptography/hazmat/primitives/kdf/kbkdf.py",
+      "line_number": 146,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "fixed = self._generate_fixed_input()",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9962806677606746,
+      "quantum_risk_score": 0.24305009725290272
+    },
+    {
+      "id": "MUSE_0091",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/cryptography/hazmat/primitives/kdf/kbkdf.py",
+      "line_number": 174,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def _generate_fixed_input(self) -> bytes:",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9620030617304749,
+      "quantum_risk_score": 0.895175706184694
+    },
+    {
+      "id": "MUSE_0092",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/cffi/setuptools_ext.py",
+      "line_number": 25,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(code, glob, glob)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9073647823889641,
+      "quantum_risk_score": 0.6326037544704168
+    },
+    {
+      "id": "MUSE_0093",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/cffi/recompiler.py",
+      "line_number": 78,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "flags = eval(self.flags, G_FLAGS)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8795562432855765,
+      "quantum_risk_score": 0.9102974131594203
+    },
+    {
+      "id": "MUSE_0094",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py",
+      "line_number": 419,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(code, env)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9398703016641203,
+      "quantum_risk_score": 0.4246401129159666
+    },
+    {
+      "id": "MUSE_0095",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py",
+      "line_number": 1053,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(py, env)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9060561754948271,
+      "quantum_risk_score": 0.7569538762867318
+    },
+    {
+      "id": "MUSE_0096",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py",
+      "line_number": 2044,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(code, env)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9914763061040983,
+      "quantum_risk_score": 0.8223420124357526
+    },
+    {
+      "id": "MUSE_0097",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/util/typing.py",
+      "line_number": 274,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "annotation = eval(expression, cls_namespace, locals_)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9384951612602772,
+      "quantum_risk_score": 0.6335441516066556
+    },
+    {
+      "id": "MUSE_0098",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/util/typing.py",
+      "line_number": 276,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "annotation = eval(expression, base_globals, locals_)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8510564155922478,
+      "quantum_risk_score": 0.4668615223775324
+    },
+    {
+      "id": "MUSE_0099",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/util/typing.py",
+      "line_number": 302,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "# name only, just look in globals.  eval() works perfectly fine here,",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.880745699837818,
+      "quantum_risk_score": 0.3720859825679588
+    },
+    {
+      "id": "MUSE_0100",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/ext/serializer.py",
+      "line_number": 64,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "pickle.loads()/dumps() can be used to fully dump any ``MetaData`` object,",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.8782628025117011,
+      "quantum_risk_score": 0.7334499668390925
+    },
+    {
+      "id": "MUSE_0101",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/ext/serializer.py",
+      "line_number": 150,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "cls = pickle.loads(b64decode(clsarg))",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9689031066426356,
+      "quantum_risk_score": 0.3813393420407606
+    },
+    {
+      "id": "MUSE_0102",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/ext/serializer.py",
+      "line_number": 153,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "cls = pickle.loads(b64decode(args))",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9568383174153255,
+      "quantum_risk_score": 0.9358170833515911
+    },
+    {
+      "id": "MUSE_0103",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/ext/serializer.py",
+      "line_number": 156,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "cls = pickle.loads(b64decode(args))",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9662130604523382,
+      "quantum_risk_score": 0.337068806738154
+    },
+    {
+      "id": "MUSE_0104",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/ext/serializer.py",
+      "line_number": 160,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "cls = pickle.loads(b64decode(mapper))",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9457404436580638,
+      "quantum_risk_score": 0.6094635765721766
+    },
+    {
+      "id": "MUSE_0105",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/testing/plugin/pytestplugin.py",
+      "line_number": 621,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(code, env)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9645168066882351,
+      "quantum_risk_score": 0.15830219184293937
+    },
+    {
+      "id": "MUSE_0106",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py",
+      "line_number": 457,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def pre_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9586934813169454,
+      "quantum_risk_score": 0.4168190450504765
+    },
+    {
+      "id": "MUSE_0107",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py",
+      "line_number": 573,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def post_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8928355091230058,
+      "quantum_risk_score": 0.7343307280101586
+    },
+    {
+      "id": "MUSE_0108",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/pg8000.py",
+      "line_number": 330,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def pre_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9654221158196643,
+      "quantum_risk_score": 0.9157471357306786
+    },
+    {
+      "id": "MUSE_0109",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/oracle/cx_oracle.py",
+      "line_number": 946,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def pre_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8742574541825636,
+      "quantum_risk_score": 0.0840180515461072
+    },
+    {
+      "id": "MUSE_0110",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/oracle/cx_oracle.py",
+      "line_number": 947,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "super().pre_exec()",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9748622548039677,
+      "quantum_risk_score": 0.34406896103838336
+    },
+    {
+      "id": "MUSE_0111",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/oracle/cx_oracle.py",
+      "line_number": 957,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def post_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9203860647235483,
+      "quantum_risk_score": 0.34044627342775735
+    },
+    {
+      "id": "MUSE_0112",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/oracle/base.py",
+      "line_number": 1865,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def pre_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8834148103056191,
+      "quantum_risk_score": 0.765636813235224
+    },
+    {
+      "id": "MUSE_0113",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/mysql/mariadbconnector.py",
+      "line_number": 82,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def post_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8598785790254666,
+      "quantum_risk_score": 0.012427027650143585
+    },
+    {
+      "id": "MUSE_0114",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/mysql/mariadbconnector.py",
+      "line_number": 83,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "super().post_exec()",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8528339054961969,
+      "quantum_risk_score": 0.03559248128042669
+    },
+    {
+      "id": "MUSE_0115",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/mysql/base.py",
+      "line_number": 1238,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def post_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9975183654869587,
+      "quantum_risk_score": 0.8701231048037104
+    },
+    {
+      "id": "MUSE_0116",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/mssql/pyodbc.py",
+      "line_number": 568,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def pre_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8926205765321841,
+      "quantum_risk_score": 0.20758602196514064
+    },
+    {
+      "id": "MUSE_0117",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/mssql/pyodbc.py",
+      "line_number": 581,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "super().pre_exec()",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9673581648121583,
+      "quantum_risk_score": 0.39073968169635154
+    },
+    {
+      "id": "MUSE_0118",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/mssql/pyodbc.py",
+      "line_number": 594,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def post_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8544142609830666,
+      "quantum_risk_score": 0.24406982620709305
+    },
+    {
+      "id": "MUSE_0119",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/mssql/pyodbc.py",
+      "line_number": 620,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "super().post_exec()",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9524986270376717,
+      "quantum_risk_score": 0.9337735312277886
+    },
+    {
+      "id": "MUSE_0120",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/mssql/base.py",
+      "line_number": 1878,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def pre_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9964497378462029,
+      "quantum_risk_score": 0.4789312999471931
+    },
+    {
+      "id": "MUSE_0121",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/dialects/mssql/base.py",
+      "line_number": 1927,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def post_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.947467307327074,
+      "quantum_risk_score": 0.73215855426716
+    },
+    {
+      "id": "MUSE_0122",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/instrumentation.py",
+      "line_number": 744,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(func_text, env)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8789600089690448,
+      "quantum_risk_score": 0.2703838391388699
+    },
+    {
+      "id": "MUSE_0123",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/strategies.py",
+      "line_number": 2887,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def load_collection_from_joined_exec(state, dict_, row):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9496328963545436,
+      "quantum_risk_score": 0.0879667823123308
+    },
+    {
+      "id": "MUSE_0124",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/strategies.py",
+      "line_number": 2926,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def load_scalar_from_joined_exec(state, dict_, row):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9753563276072185,
+      "quantum_risk_score": 0.0006335891894123646
+    },
+    {
+      "id": "MUSE_0125",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/events.py",
+      "line_number": 2015,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def after_flush_postexec(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8980557190586312,
+      "quantum_risk_score": 0.3394510522090215
+    },
+    {
+      "id": "MUSE_0126",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/clsregistry.py",
+      "line_number": 533,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "x = eval(self.arg, globals(), self._dict)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.852914976363945,
+      "quantum_risk_score": 0.49015856729609464
+    },
+    {
+      "id": "MUSE_0127",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py",
+      "line_number": 2191,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": ") = compile_state_cls.orm_pre_session_exec(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8761454785512279,
+      "quantum_risk_score": 0.7125999155774524
+    },
+    {
+      "id": "MUSE_0128",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py",
+      "line_number": 2222,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "# now run orm_pre_session_exec() \"for real\".   if there were",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8704248516389078,
+      "quantum_risk_score": 0.7112134467241517
+    },
+    {
+      "id": "MUSE_0129",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py",
+      "line_number": 2230,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": ") = compile_state_cls.orm_pre_session_exec(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9783144432976214,
+      "quantum_risk_score": 0.2280003752952663
+    },
+    {
+      "id": "MUSE_0130",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py",
+      "line_number": 4475,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "self.dispatch.after_flush_postexec(self, flush_context)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9703723269878529,
+      "quantum_risk_score": 0.91112870138921
+    },
+    {
+      "id": "MUSE_0131",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py",
+      "line_number": 285,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def orm_pre_session_exec(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.91413281724597,
+      "quantum_risk_score": 0.7976516320545461
+    },
+    {
+      "id": "MUSE_0132",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py",
+      "line_number": 335,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def orm_pre_session_exec(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9513158541432332,
+      "quantum_risk_score": 0.10354349567660603
+    },
+    {
+      "id": "MUSE_0133",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py",
+      "line_number": 492,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def orm_pre_session_exec(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9413901978927484,
+      "quantum_risk_score": 0.6234454445184708
+    },
+    {
+      "id": "MUSE_0134",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/_orm_constructors.py",
+      "line_number": 1102,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "argument is interpreted using Python's ``eval()`` function.",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8900893585489486,
+      "quantum_risk_score": 0.3354153585046866
+    },
+    {
+      "id": "MUSE_0135",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/_orm_constructors.py",
+      "line_number": 1339,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "argument is interpreted using Python's ``eval()`` function.",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8820676793626271,
+      "quantum_risk_score": 0.8905328315717665
+    },
+    {
+      "id": "MUSE_0136",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/_orm_constructors.py",
+      "line_number": 1541,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "argument is interpreted using Python's ``eval()`` function.",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8534589703609609,
+      "quantum_risk_score": 0.6230528822479494
+    },
+    {
+      "id": "MUSE_0137",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/_orm_constructors.py",
+      "line_number": 1638,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "argument is interpreted using Python's ``eval()`` function.",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9555633066952554,
+      "quantum_risk_score": 0.5302709049749785
+    },
+    {
+      "id": "MUSE_0138",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/_orm_constructors.py",
+      "line_number": 1657,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "argument is interpreted using Python's ``eval()`` function.",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9321559791458405,
+      "quantum_risk_score": 0.2921388034377598
+    },
+    {
+      "id": "MUSE_0139",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/_orm_constructors.py",
+      "line_number": 1699,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "argument is interpreted using Python's ``eval()`` function.",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9455745795889311,
+      "quantum_risk_score": 0.14864443431012198
+    },
+    {
+      "id": "MUSE_0140",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/bulk_persistence.py",
+      "line_number": 663,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def orm_pre_session_exec(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.975757835203966,
+      "quantum_risk_score": 0.6668695817788554
+    },
+    {
+      "id": "MUSE_0141",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/orm/bulk_persistence.py",
+      "line_number": 1165,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def orm_pre_session_exec(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8627817965555793,
+      "quantum_risk_score": 0.7903541836612679
+    },
+    {
+      "id": "MUSE_0142",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/engine/interfaces.py",
+      "line_number": 2938,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "sql.Compiled object by the time pre_exec() has completed.\"\"\"",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8868505816023214,
+      "quantum_risk_score": 0.4750744957447659
+    },
+    {
+      "id": "MUSE_0143",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/engine/interfaces.py",
+      "line_number": 3082,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def pre_exec(self) -> None:",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.859025434644692,
+      "quantum_risk_score": 0.06798397703408732
+    },
+    {
+      "id": "MUSE_0144",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/engine/interfaces.py",
+      "line_number": 3128,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def post_exec(self) -> None:",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9389452310665317,
+      "quantum_risk_score": 0.9584894941014154
+    },
+    {
+      "id": "MUSE_0145",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py",
+      "line_number": 1777,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def pre_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9780139647936213,
+      "quantum_risk_score": 0.8061880655301843
+    },
+    {
+      "id": "MUSE_0146",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py",
+      "line_number": 1785,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def post_exec(self):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9343770363897925,
+      "quantum_risk_score": 0.5816489621047741
+    },
+    {
+      "id": "MUSE_0147",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py",
+      "line_number": 1803,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "calculated within post_exec().",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9068115668708204,
+      "quantum_risk_score": 0.785309505141169
+    },
+    {
+      "id": "MUSE_0148",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py",
+      "line_number": 1837,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "context.pre_exec()",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8975369744687319,
+      "quantum_risk_score": 0.756516558315125
+    },
+    {
+      "id": "MUSE_0149",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py",
+      "line_number": 1977,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "context.post_exec()",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9032387869887355,
+      "quantum_risk_score": 0.3192418738017041
+    },
+    {
+      "id": "MUSE_0150",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py",
+      "line_number": 2145,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "context.post_exec()",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9503691427136436,
+      "quantum_risk_score": 0.15859912951093647
+    },
+    {
+      "id": "MUSE_0151",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/sql/sqltypes.py",
+      "line_number": 1840,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "``pickle.dumps()`` to incoming objects, and ``pickle.loads()`` on",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9015356904128955,
+      "quantum_risk_score": 0.6271475997512961
+    },
+    {
+      "id": "MUSE_0152",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/sqlalchemy/sql/lambdas.py",
+      "line_number": 1262,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(code, vars_, vars_)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8553000453998508,
+      "quantum_risk_score": 0.6495990889480905
+    },
+    {
+      "id": "MUSE_0153",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/jose/utils.py",
+      "line_number": 70,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "input (bytes): A base64url_encoded string (bytes) to decode.",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9120010231465595,
+      "quantum_risk_score": 0.8026109446792923
+    },
+    {
+      "id": "MUSE_0154",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/jose/utils.py",
+      "line_number": 85,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "input (bytes): A base64url_encoded string (bytes) to encode.",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.868171719092555,
+      "quantum_risk_score": 0.7105662293852819
+    },
+    {
+      "id": "MUSE_0155",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/anyio/to_process.py",
+      "line_number": 86,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "retval = pickle.loads(pickled_response)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9683030904581864,
+      "quantum_risk_score": 0.7320720003139963
+    },
+    {
+      "id": "MUSE_0156",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/anyio/to_process.py",
+      "line_number": 210,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "command, *args = pickle.load(stdin.buffer)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9736124807776975,
+      "quantum_risk_score": 0.25836602073004544
+    },
+    {
+      "id": "MUSE_0157",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/anyio/to_interpreter.py",
+      "line_number": 111,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "if exc_info := interpreters.exec(self._interpreter_id, self._run_func):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8514010852313738,
+      "quantum_risk_score": 0.923677920835952
+    },
+    {
+      "id": "MUSE_0158",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/anyio/to_interpreter.py",
+      "line_number": 116,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "res = pickle.loads(res)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.973680254943672,
+      "quantum_risk_score": 0.7957264610763611
+    },
+    {
+      "id": "MUSE_0159",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py",
+      "line_number": 2561,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "process = await asyncio.create_subprocess_exec(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9634707008822829,
+      "quantum_risk_score": 0.9980296874228171
+    },
+    {
+      "id": "MUSE_0160",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "line_number": 460,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "username = ask_input(f\"User for {netloc}: \") if self.prompting else None",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.875218961328205,
+      "quantum_risk_score": 0.5242006022203564
+    },
+    {
+      "id": "MUSE_0161",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_internal/utils/misc.py",
+      "line_number": 217,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def _check_no_input(message: str) -> None:",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8818132836648294,
+      "quantum_risk_score": 0.3043773180262732
+    },
+    {
+      "id": "MUSE_0162",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_internal/utils/misc.py",
+      "line_number": 228,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "_check_no_input(message)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9763673662340733,
+      "quantum_risk_score": 0.5447321628639813
+    },
+    {
+      "id": "MUSE_0163",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_internal/utils/misc.py",
+      "line_number": 229,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "response = input(message)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9853642824359142,
+      "quantum_risk_score": 0.661948752099293
+    },
+    {
+      "id": "MUSE_0164",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_internal/utils/misc.py",
+      "line_number": 240,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def ask_input(message: str) -> str:",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9715528090342197,
+      "quantum_risk_score": 0.08903797850887762
+    },
+    {
+      "id": "MUSE_0165",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_internal/utils/misc.py",
+      "line_number": 242,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "_check_no_input(message)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9073317808125492,
+      "quantum_risk_score": 0.2458837314342972
+    },
+    {
+      "id": "MUSE_0166",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_internal/utils/misc.py",
+      "line_number": 243,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "return input(message)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9531835021912097,
+      "quantum_risk_score": 0.8698476440034587
+    },
+    {
+      "id": "MUSE_0167",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_internal/utils/misc.py",
+      "line_number": 248,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "_check_no_input(message)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9948354093014993,
+      "quantum_risk_score": 0.32590342000656536
+    },
+    {
+      "id": "MUSE_0168",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_internal/utils/setuptools_build.py",
+      "line_number": 10,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(compile('''",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8957315693662481,
+      "quantum_risk_score": 0.31754529027826817
+    },
+    {
+      "id": "MUSE_0169",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_internal/utils/setuptools_build.py",
+      "line_number": 43,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(compile(setup_py_code, filename, \"exec\"))",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8747050882695812,
+      "quantum_risk_score": 0.710249452442935
+    },
+    {
+      "id": "MUSE_0170",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/typing_extensions.py",
+      "line_number": 1215,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "(unless you are familiar with how eval() and exec() work).  The",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.855050148549418,
+      "quantum_risk_score": 0.09836706841551368
+    },
+    {
+      "id": "MUSE_0171",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/typing_extensions.py",
+      "line_number": 1215,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "(unless you are familiar with how eval() and exec() work).  The",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.997142496702945,
+      "quantum_risk_score": 0.6093461612303511
+    },
+    {
+      "id": "MUSE_0172",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/typing_extensions.py",
+      "line_number": 2105,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "query(f\"SELECT * FROM {input()}\")  # not ok",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8722765226970959,
+      "quantum_risk_score": 0.2745525967442911
+    },
+    {
+      "id": "MUSE_0173",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/packaging/_parser.py",
+      "line_number": 332,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "value = ast.literal_eval(python_str)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9869717916542432,
+      "quantum_risk_score": 0.9699230315221965
+    },
+    {
+      "id": "MUSE_0174",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/packaging/licenses/__init__.py",
+      "line_number": 100,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "invalid = eval(python_expression, globals(), locals())",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9866815113564932,
+      "quantum_risk_score": 0.662602228113864
+    },
+    {
+      "id": "MUSE_0175",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/pygments/lexer.py",
+      "line_number": 86,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "Strip leading and trailing newlines from the input (default: True).",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9882710473103551,
+      "quantum_risk_score": 0.17471996776932952
+    },
+    {
+      "id": "MUSE_0176",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/pygments/lexer.py",
+      "line_number": 97,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "If given and greater than 0, expand tabs in the input (default: 0).",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.894668721031354,
+      "quantum_risk_score": 0.25489915516898
+    },
+    {
+      "id": "MUSE_0177",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/pygments/lexer.py",
+      "line_number": 206,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def _preprocess_lexer_input(self, text):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.883455920728628,
+      "quantum_risk_score": 0.8798794446149882
+    },
+    {
+      "id": "MUSE_0178",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/pygments/lexer.py",
+      "line_number": 269,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "text = self._preprocess_lexer_input(text)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.997215449741329,
+      "quantum_risk_score": 0.19350929997623467
+    },
+    {
+      "id": "MUSE_0179",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/pygments/lexers/__init__.py",
+      "line_number": 154,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(f.read(), custom_namespace)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8786733041959738,
+      "quantum_risk_score": 0.6686871973809136
+    },
+    {
+      "id": "MUSE_0180",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/pygments/formatters/html.py",
+      "line_number": 274,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "relative to the input (i.e. the first line is line 1) and are",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9764764608096496,
+      "quantum_risk_score": 0.5941723679782205
+    },
+    {
+      "id": "MUSE_0181",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/pygments/formatters/__init__.py",
+      "line_number": 91,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "this method is equivalent to running ``eval()`` on the input file. The formatter is",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8637851507775173,
+      "quantum_risk_score": 0.6692671990493569
+    },
+    {
+      "id": "MUSE_0182",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/pygments/formatters/__init__.py",
+      "line_number": 103,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(f.read(), custom_namespace)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8540209437893229,
+      "quantum_risk_score": 0.49223099831069805
+    },
+    {
+      "id": "MUSE_0183",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/distlib/util.py",
+      "line_number": 325,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "s = raw_input(p)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9473149594573624,
+      "quantum_risk_score": 0.7376831145463784
+    },
+    {
+      "id": "MUSE_0184",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/distlib/scripts.py",
+      "line_number": 163,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "# shebang, or else using os.exec() to run the entry script will",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8704202325292044,
+      "quantum_risk_score": 0.38372545447918105
+    },
+    {
+      "id": "MUSE_0185",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/rich/console.py",
+      "line_number": 2120,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def input(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9110380886877524,
+      "quantum_risk_score": 0.55076091983981
+    },
+    {
+      "id": "MUSE_0186",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/rich/console.py",
+      "line_number": 2151,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "result = input()",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9231523932498609,
+      "quantum_risk_score": 0.12902656713409577
+    },
+    {
+      "id": "MUSE_0187",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/rich/markup.py",
+      "line_number": 190,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "meta_params = literal_eval(parameters)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9145241698281983,
+      "quantum_risk_score": 0.0961271668404492
+    },
+    {
+      "id": "MUSE_0188",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py",
+      "line_number": 194,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def get_input(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8690839074659467,
+      "quantum_risk_score": 0.7981175476128801
+    },
+    {
+      "id": "MUSE_0189",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py",
+      "line_number": 211,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "return console.input(prompt, password=password, stream=stream)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8722504474800893,
+      "quantum_risk_score": 0.5323076062575957
+    },
+    {
+      "id": "MUSE_0190",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py",
+      "line_number": 292,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "value = self.get_input(self.console, prompt, self.password, stream=stream)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9333580132901378,
+      "quantum_risk_score": 0.1288625972960593
+    },
+    {
+      "id": "MUSE_0191",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/urllib3/packages/six.py",
+      "line_number": 787,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec (\"\"\"exec _code_ in _globs_, _locs_\"\"\")",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8699495623677662,
+      "quantum_risk_score": 0.8047829414001237
+    },
+    {
+      "id": "MUSE_0192",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/pkg_resources/__init__.py",
+      "line_number": 1714,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(code, namespace, namespace)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9017851794305854,
+      "quantum_risk_score": 0.6136866680956627
+    },
+    {
+      "id": "MUSE_0193",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pip/_vendor/pkg_resources/__init__.py",
+      "line_number": 1725,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(script_code, namespace, namespace)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9408158721026835,
+      "quantum_risk_score": 0.7542203199265978
+    },
+    {
+      "id": "MUSE_0194",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pluggy/_hooks.py",
+      "line_number": 512,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9370760049266326,
+      "quantum_risk_score": 0.07188281909612881
+    },
+    {
+      "id": "MUSE_0195",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pluggy/_hooks.py",
+      "line_number": 534,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "res = self._hookexec(self.name, self._hookimpls.copy(), kwargs, False)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8687761879140818,
+      "quantum_risk_score": 0.3483673645704405
+    },
+    {
+      "id": "MUSE_0196",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pluggy/_hooks.py",
+      "line_number": 573,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "return self._hookexec(self.name, hookimpls, kwargs, firstresult)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8681039028270006,
+      "quantum_risk_score": 0.31167704849487476
+    },
+    {
+      "id": "MUSE_0197",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pluggy/_hooks.py",
+      "line_number": 580,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "res = self._hookexec(self.name, [method], kwargs, False)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8521797059461196,
+      "quantum_risk_score": 0.46456768495174117
+    },
+    {
+      "id": "MUSE_0198",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pluggy/_manager.py",
+      "line_number": 111,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def _hookexec(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9025124720854106,
+      "quantum_risk_score": 0.38189969260665846
+    },
+    {
+      "id": "MUSE_0199",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pluggy/_manager.py",
+      "line_number": 120,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "return self._inner_hookexec(hook_name, methods, kwargs, firstresult)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9309462046837494,
+      "quantum_risk_score": 0.2126849395642747
+    },
+    {
+      "id": "MUSE_0200",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pluggy/_manager.py",
+      "line_number": 464,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def traced_hookexec(",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9885863125350965,
+      "quantum_risk_score": 0.6803039969482676
+    },
+    {
+      "id": "MUSE_0201",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pydantic/v1/utils.py",
+      "line_number": 195,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "eval('__IPYTHON__')",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8849237731861539,
+      "quantum_risk_score": 0.0685950519275168
+    },
+    {
+      "id": "MUSE_0202",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pydantic/v1/parse.py",
+      "line_number": 42,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "return pickle.loads(bb)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9124900334438646,
+      "quantum_risk_score": 0.00953790094527407
+    },
+    {
+      "id": "MUSE_0203",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pydantic/_internal/_typing_extra.py",
+      "line_number": 623,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "(unless you are familiar with how eval() and exec() work).  The",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9351008381031016,
+      "quantum_risk_score": 0.888444823216188
+    },
+    {
+      "id": "MUSE_0204",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pydantic/_internal/_typing_extra.py",
+      "line_number": 623,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "(unless you are familiar with how eval() and exec() work).  The",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9809039985024148,
+      "quantum_risk_score": 0.8023346941933385
+    },
+    {
+      "id": "MUSE_0205",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pydantic/_internal/_typing_extra.py",
+      "line_number": 656,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "# the globalns and localns order so that eval() looks into",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9379867650171628,
+      "quantum_risk_score": 0.6509920572822719
+    },
+    {
+      "id": "MUSE_0206",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pydantic/_internal/_namespace_utils.py",
+      "line_number": 37,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "return eval(typ, *ns)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9477373573439849,
+      "quantum_risk_score": 0.8228808713578517
+    },
+    {
+      "id": "MUSE_0207",
+      "category": "Deserialization",
+      "severity": "HIGH",
+      "file_path": "backend/venv/lib/python3.13/site-packages/pydantic/deprecated/parse.py",
+      "line_number": 54,
+      "description": "pickle.load() can execute arbitrary code",
+      "code_snippet": "return pickle.loads(bb)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Use JSON instead of pickle",
+        "Validate serialized data",
+        "Implement safe deserialization"
+      ],
+      "gemini_confidence": 0.9891704022319381,
+      "quantum_risk_score": 0.0236805738481336
+    },
+    {
+      "id": "MUSE_0208",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/typing_inspection/typing_objects.py",
+      "line_number": 100,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(func_code, globals_, locals_)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9796052046983319,
+      "quantum_risk_score": 0.22498327948898522
+    },
+    {
+      "id": "MUSE_0209",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/typing_inspection/typing_objects.py",
+      "line_number": 132,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(func_code, globals_, locals_)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9736037578031075,
+      "quantum_risk_score": 0.7378623706943184
+    },
+    {
+      "id": "MUSE_0210",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/skipping.py",
+      "line_number": 91,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "If an old-style string condition is given, it is eval()'d, otherwise the",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9102487408251039,
+      "quantum_risk_score": 0.707403060777088
+    },
+    {
+      "id": "MUSE_0211",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/skipping.py",
+      "line_number": 118,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "result = eval(condition_code, globals_)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9010008855999152,
+      "quantum_risk_score": 0.8070415185265273
+    },
+    {
+      "id": "MUSE_0212",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/capture.py",
+      "line_number": 222,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "class DontReadFromInput(TextIO):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9191859346643609,
+      "quantum_risk_score": 0.41168368893091745
+    },
+    {
+      "id": "MUSE_0213",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/capture.py",
+      "line_number": 371,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "tmpfile = DontReadFromInput()",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9214057740447232,
+      "quantum_risk_score": 0.27133963872850453
+    },
+    {
+      "id": "MUSE_0214",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/pytester.py",
+      "line_number": 295,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "if eval(check, backlocals, call.__dict__):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9613975887728188,
+      "quantum_risk_score": 0.07253725193191873
+    },
+    {
+      "id": "MUSE_0215",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/mark/__init__.py",
+      "line_number": 68,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "def test_eval(test_input, expected):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9839998967380843,
+      "quantum_risk_score": 0.24613144247405927
+    },
+    {
+      "id": "MUSE_0216",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/mark/__init__.py",
+      "line_number": 69,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "assert eval(test_input) == expected",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9309771769177673,
+      "quantum_risk_score": 0.599321424514005
+    },
+    {
+      "id": "MUSE_0217",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/mark/expression.py",
+      "line_number": 281,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "\"\"\"Adapts a matcher function to a locals mapping as required by eval().\"\"\"",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8846222381221218,
+      "quantum_risk_score": 0.31731513546421153
+    },
+    {
+      "id": "MUSE_0218",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/mark/expression.py",
+      "line_number": 330,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "ret: bool = bool(eval(self.code, {\"__builtins__\": {}}, MatcherAdapter(matcher)))",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.8832506952648337,
+      "quantum_risk_score": 0.5250811498451473
+    },
+    {
+      "id": "MUSE_0219",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/_code/code.py",
+      "line_number": 162,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "def eval(self, code, **vars):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9421694498367156,
+      "quantum_risk_score": 0.28539666947535813
+    },
+    {
+      "id": "MUSE_0220",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/_code/code.py",
+      "line_number": 171,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "return eval(code, self.f_globals, f_locals)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.851681656040206,
+      "quantum_risk_score": 0.0860303679198815
+    },
+    {
+      "id": "MUSE_0221",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/_code/code.py",
+      "line_number": 324,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "# however via `exec(...)` / `eval(...)` they can be other types",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9165734149134775,
+      "quantum_risk_score": 0.3096799869418235
+    },
+    {
+      "id": "MUSE_0222",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/_code/code.py",
+      "line_number": 324,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "# however via `exec(...)` / `eval(...)` they can be other types",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9055513371843388,
+      "quantum_risk_score": 0.29749517507764334
+    },
+    {
+      "id": "MUSE_0223",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py",
+      "line_number": 186,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(co, module.__dict__)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9964753411224669,
+      "quantum_risk_score": 0.9677025225617014
+    },
+    {
+      "id": "MUSE_0224",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/_py/path.py",
+      "line_number": 1153,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "exec(f.read(), mod.__dict__)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9620215091466074,
+      "quantum_risk_score": 0.8712887856499946
+    },
+    {
+      "id": "MUSE_0225",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/_pytest/_py/path.py",
+      "line_number": 1159,
+      "description": "Use of exec() can lead to code injection",
+      "code_snippet": "def sysexec(self, *argv: os.PathLike[str], **popen_opts: Any) -> str:",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.870369579668201,
+      "quantum_risk_score": 0.3932810624185804
+    },
+    {
+      "id": "MUSE_0226",
+      "category": "Code Injection",
+      "severity": "CRITICAL",
+      "file_path": "backend/venv/lib/python3.13/site-packages/passlib/crypto/digest.py",
+      "line_number": 1000,
+      "description": "Use of eval() can lead to code injection",
+      "code_snippet": "eval(code, gdict, ldict)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Replace eval/exec with safer alternatives",
+        "Validate and sanitize all inputs",
+        "Use AST parsing instead of eval"
+      ],
+      "gemini_confidence": 0.9246014677257081,
+      "quantum_risk_score": 0.1627896184451083
+    },
+    {
+      "id": "MUSE_0227",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/passlib/tests/test_handlers.py",
+      "line_number": 208,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def test_77_fuzz_input(self, **kwds):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9480718969430574,
+      "quantum_risk_score": 0.27027474512542693
+    },
+    {
+      "id": "MUSE_0228",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/passlib/tests/test_handlers.py",
+      "line_number": 211,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "super(_bsdi_crypt_test, self).test_77_fuzz_input(**kwds)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9408839953147867,
+      "quantum_risk_score": 0.4625554370921948
+    },
+    {
+      "id": "MUSE_0229",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/passlib/tests/test_handlers.py",
+      "line_number": 711,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def test_77_fuzz_input(self, **ignored):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.8969939574771392,
+      "quantum_risk_score": 0.7870387703076558
+    },
+    {
+      "id": "MUSE_0230",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/passlib/tests/test_handlers_bcrypt.py",
+      "line_number": 435,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "if is_safe_crypt_input(row[0])]",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9259688200504596,
+      "quantum_risk_score": 0.4623140750018946
+    },
+    {
+      "id": "MUSE_0231",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/passlib/tests/utils.py",
+      "line_number": 2684,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def test_77_fuzz_input(self, threaded=False):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9780965820419489,
+      "quantum_risk_score": 0.6014591419761209
+    },
+    {
+      "id": "MUSE_0232",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/passlib/tests/utils.py",
+      "line_number": 2795,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "# test_77_fuzz_input(), and see if any errors get thrown.",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9907573095146036,
+      "quantum_risk_score": 0.9516465734909624
+    },
+    {
+      "id": "MUSE_0233",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/passlib/tests/utils.py",
+      "line_number": 2799,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "self.test_77_fuzz_input(threaded=True)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9515009676933657,
+      "quantum_risk_score": 0.662932264926495
+    },
+    {
+      "id": "MUSE_0234",
+      "category": "Input Validation",
+      "severity": "MEDIUM",
+      "file_path": "backend/venv/lib/python3.13/site-packages/passlib/utils/__init__.py",
+      "line_number": 839,
+      "description": "input() should be validated to prevent injection",
+      "code_snippet": "def is_safe_crypt_input(value):",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Validate all user inputs",
+        "Use allow-lists instead of deny-lists",
+        "Implement input sanitization"
+      ],
+      "gemini_confidence": 0.9308400463028945,
+      "quantum_risk_score": 0.27609467649571184
+    },
+    {
+      "id": "MUSE_0235",
+      "category": "Data Exposure",
+      "severity": "LOW",
+      "file_path": "frontend/src/hooks/useMuseAPI.ts",
+      "line_number": 613,
+      "description": "localStorage can be accessed by malicious scripts",
+      "code_snippet": "window.localStorage.setItem(key, JSON.stringify(valueToStore))",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Encrypt sensitive data in storage",
+        "Use secure storage mechanisms",
+        "Implement data expiration"
+      ],
+      "gemini_confidence": 0.9380091047345197,
+      "quantum_risk_score": 0.22672642132177845
+    },
+    {
+      "id": "MUSE_0236",
+      "category": "Data Exposure",
+      "severity": "LOW",
+      "file_path": "frontend/src/services/api.ts",
+      "line_number": 424,
+      "description": "localStorage can be accessed by malicious scripts",
+      "code_snippet": "localStorage.setItem('muse_auth_token', token)",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Encrypt sensitive data in storage",
+        "Use secure storage mechanisms",
+        "Implement data expiration"
+      ],
+      "gemini_confidence": 0.9486377527545329,
+      "quantum_risk_score": 0.6729053340663669
+    },
+    {
+      "id": "MUSE_0237",
+      "category": "Data Exposure",
+      "severity": "LOW",
+      "file_path": "frontend/src/components/MissionControlDashboard.tsx",
+      "line_number": 199,
+      "description": "localStorage can be accessed by malicious scripts",
+      "code_snippet": "localStorage.setItem('selectedModels', JSON.stringify(selectedModels));",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Encrypt sensitive data in storage",
+        "Use secure storage mechanisms",
+        "Implement data expiration"
+      ],
+      "gemini_confidence": 0.9263794622470949,
+      "quantum_risk_score": 0.10086101158935767
+    },
+    {
+      "id": "MUSE_0238",
+      "category": "Data Exposure",
+      "severity": "LOW",
+      "file_path": "frontend/src/pages/MagicLandingPage.tsx",
+      "line_number": 29,
+      "description": "localStorage can be accessed by malicious scripts",
+      "code_snippet": "localStorage.setItem('muse_archetype', archetype);",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Encrypt sensitive data in storage",
+        "Use secure storage mechanisms",
+        "Implement data expiration"
+      ],
+      "gemini_confidence": 0.8922504969658499,
+      "quantum_risk_score": 0.0854922829289746
+    },
+    {
+      "id": "MUSE_0239",
+      "category": "Data Exposure",
+      "severity": "LOW",
+      "file_path": "frontend/src/pages/MagicLandingPage.tsx",
+      "line_number": 30,
+      "description": "localStorage can be accessed by malicious scripts",
+      "code_snippet": "localStorage.setItem('muse_frequency', String(frequency));",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Encrypt sensitive data in storage",
+        "Use secure storage mechanisms",
+        "Implement data expiration"
+      ],
+      "gemini_confidence": 0.9368943713043033,
+      "quantum_risk_score": 0.6791275275014069
+    },
+    {
+      "id": "MUSE_0240",
+      "category": "Data Exposure",
+      "severity": "LOW",
+      "file_path": "frontend/src/pages/MagicLandingPage.tsx",
+      "line_number": 31,
+      "description": "localStorage can be accessed by malicious scripts",
+      "code_snippet": "localStorage.setItem('muse_scores', JSON.stringify(scores));",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Encrypt sensitive data in storage",
+        "Use secure storage mechanisms",
+        "Implement data expiration"
+      ],
+      "gemini_confidence": 0.9840207605358896,
+      "quantum_risk_score": 0.9504748203712946
+    },
+    {
+      "id": "MUSE_0241",
+      "category": "Credential Exposure",
+      "severity": "CRITICAL",
+      "file_path": "docker-compose.yml",
+      "line_number": 12,
+      "description": "Potential credential exposure in configuration file",
+      "code_snippet": "POSTGRES_PASSWORD: muse_password",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Move secrets to environment variables",
+        "Use secret management system",
+        "Add .env to .gitignore"
+      ],
+      "gemini_confidence": 0.9941135912185837,
+      "quantum_risk_score": 0.49642748128210745
+    },
+    {
+      "id": "MUSE_0242",
+      "category": "Credential Exposure",
+      "severity": "CRITICAL",
+      "file_path": "docker-compose.yml",
+      "line_number": 147,
+      "description": "Potential credential exposure in configuration file",
+      "code_snippet": "- GF_SECURITY_ADMIN_PASSWORD=muse_admin",
+      "exploit_chain": [],
+      "remediation_steps": [
+        "Move secrets to environment variables",
+        "Use secret management system",
+        "Add .env to .gitignore"
+      ],
+      "gemini_confidence": 0.8605699803724409,
+      "quantum_risk_score": 0.03952757806526608
+    }
+  ],
+  "remediation_roadmap": {
+    "immediate_actions": [
+      {
+        "priority": 1,
+        "action": "Fix critical vulnerability: Code Injection in red_zen_muse_gauntlet.py",
+        "impact": "Critical security risk mitigation",
+        "effort": "High"
+      },
+      {
+        "priority": 1,
+        "action": "Fix critical vulnerability: Code Injection in red_zen_muse_gauntlet.py",
+        "impact": "Critical security risk mitigation",
+        "effort": "High"
+      },
+      {
+        "priority": 1,
+        "action": "Fix critical vulnerability: Code Injection in red_zen_muse_gauntlet.py",
+        "impact": "Critical security risk mitigation",
+        "effort": "High"
+      }
+    ],
+    "short_term_goals": [
+      {
+        "priority": 2,
+        "action": "Address high-severity issue: Injection Attack in backend/main.py",
+        "impact": "Improved security posture",
+        "effort": "Medium"
+      },
+      {
+        "priority": 2,
+        "action": "Address high-severity issue: Injection Attack in backend/main.py",
+        "impact": "Improved security posture",
+        "effort": "Medium"
+      },
+      {
+        "priority": 2,
+        "action": "Address high-severity issue: Injection Attack in backend/main.py",
+        "impact": "Improved security posture",
+        "effort": "Medium"
+      },
+      {
+        "priority": 2,
+        "action": "Address high-severity issue: Injection Attack in backend/main.py",
+        "impact": "Improved security posture",
+        "effort": "Medium"
+      },
+      {
+        "priority": 2,
+        "action": "Address high-severity issue: Injection Attack in backend/main.py",
+        "impact": "Improved security posture",
+        "effort": "Medium"
+      }
+    ],
+    "long_term_improvements": [
+      "Implement comprehensive security monitoring",
+      "Add automated security testing to CI/CD pipeline",
+      "Establish security code review process",
+      "Implement Web Application Firewall (WAF)",
+      "Add security headers and HTTPS enforcement",
+      "Establish incident response procedures"
+    ]
+  }
+}

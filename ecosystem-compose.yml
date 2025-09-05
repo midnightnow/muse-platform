@@ -1,0 +1,157 @@
+version: "3.9"
+
+# MUSE Platform AI Agent Ecosystem
+# This orchestrates the complete stack: MUSE Platform + Agent-001 Monitor + Infrastructure
+
+services:
+  # PostgreSQL Database for MUSE Platform
+  postgres:
+    image: postgres:15-alpine
+    container_name: muse_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: muse_db
+      POSTGRES_USER: muse_user
+      POSTGRES_PASSWORD: muse_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - muse_ecosystem
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U muse_user -d muse_db"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Redis for caching and session management
+  redis:
+    image: redis:7-alpine
+    container_name: muse_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - muse_ecosystem
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # MUSE Backend Platform (Main Application)
+  muse:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: muse_backend
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgresql://muse_user:muse_password@postgres:5432/muse_db
+      - REDIS_URL=redis://redis:6379/0
+      - ENVIRONMENT=production
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - /dev/urandom:/dev/urandom:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - muse_ecosystem
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # Agent-001 Ecosystem Monitor
+  agent:
+    build: .
+    image: agent-001:latest
+    container_name: ecosystem_monitor
+    restart: unless-stopped
+    environment:
+      TARGETS: >-
+        http://muse:8000/health,
+        http://postgres:5432,
+        http://redis:6379
+      APP_NAME: agent-001
+      GIT_SHA: ${GIT_SHA:-production}
+    ports:
+      - "9000:9000"
+    depends_on:
+      muse:
+        condition: service_healthy
+    networks:
+      - muse_ecosystem
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  # Nginx Reverse Proxy (Production Gateway)
+  nginx:
+    image: nginx:alpine
+    container_name: muse_gateway
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - muse
+      - agent
+    networks:
+      - muse_ecosystem
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Monitoring Dashboard (Grafana)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: muse_dashboard
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=muse_admin_2024
+    ports:
+      - "3001:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+    networks:
+      - muse_ecosystem
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  grafana_data:
+    driver: local
+
+networks:
+  muse_ecosystem:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.21.0.0/16
